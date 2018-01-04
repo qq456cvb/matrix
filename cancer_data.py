@@ -22,7 +22,12 @@ def read_training_data(fname, D=None):
     if D is None: D = feature_labels
     feature_vectors = {}
     patient_diagnoses = {}
+    cnt = 0
+    # test for first 20 data
     for line in file:
+        cnt += 1
+        if cnt > 20:
+            break
         row = line.split(",")
         patient_ID = int(row[0])
         patient_diagnoses[patient_ID] = -1 if row[1]=='B' else +1

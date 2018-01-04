@@ -258,3 +258,6 @@ class Vec:
 
     def __iter__(self):
         raise TypeError('%r object is not iterable' % self.__class__.__name__)
+
+    def values(self):
+        return [self.__getitem__(k) for k in self.D]
